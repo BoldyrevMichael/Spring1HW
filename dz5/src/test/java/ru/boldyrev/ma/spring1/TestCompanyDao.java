@@ -2,6 +2,7 @@ package ru.boldyrev.ma.spring1;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.transaction.annotation.Transactional;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -44,7 +45,8 @@ public class TestCompanyDao {
     }
 
     @AfterTest
-    private void testRemove() {
+    //@Transactional
+    void testRemove() {
         final Company company = companyDao.findCompanyById(idForTest);
         //companyDao.remove(company);
     }

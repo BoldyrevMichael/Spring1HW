@@ -15,6 +15,6 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     @Transactional(readOnly = true)
     public Company findCompanyById(String id) {
-        return companyRepository.findOne(id);
+        return companyRepository.getOne(id);
     }
 }

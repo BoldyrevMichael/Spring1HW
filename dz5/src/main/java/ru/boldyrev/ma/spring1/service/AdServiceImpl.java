@@ -1,6 +1,7 @@
 package ru.boldyrev.ma.spring1.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.boldyrev.ma.spring1.entity.Ad;
@@ -25,7 +26,7 @@ public class AdServiceImpl implements AdService {
     @Override
     @Transactional(readOnly = true)
     public Ad findAdById(String id) {
-        return adRepository.findOne(id);
+        return adRepository.getOne(id);
     }
 
     @Override

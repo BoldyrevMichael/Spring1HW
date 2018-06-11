@@ -6,7 +6,7 @@ import ru.boldyrev.ma.spring1.config.AppConfig;
 import ru.boldyrev.ma.spring1.repository.dao.AdDao;
 import ru.boldyrev.ma.spring1.repository.dao.CategoryDao;
 import ru.boldyrev.ma.spring1.repository.dao.CompanyDao;
-import ru.boldyrev.ma.spring1.service.AdServiceImpl;
+import ru.boldyrev.ma.spring1.service.AdService;
 
 public class App {
     public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class App {
         System.out.println(adDao.getListOfAd());
         idForTest = adDao.getListOfAd().get(0).getId();
 
-        AdServiceImpl adService = context.getBean(AdServiceImpl.class);
-        adService.setContent("Новый контент", idForTest);
+        AdService adService = context.getBean(AdService.class);
+        adService.setContent("Новый контент1", idForTest);
     }
 }
